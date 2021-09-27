@@ -1,7 +1,4 @@
 This is the initial commit to our project
-<<<<<<< HEAD
 I add this three times
-=======
 asdflkjal
 asdfjaksd
->>>>>>> B_Branch
