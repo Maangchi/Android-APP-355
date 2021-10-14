@@ -1,4 +1,4 @@
 package com.example.cmsc355cookbookapp;
 
-public class mainPage {
+public class ingrediantsPage {
 }
