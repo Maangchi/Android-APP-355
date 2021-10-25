@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.cmsc355cookbookapp.databinding.ActivityMainBinding;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -29,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     public void onIngbtnClick (View view) {
-        setContentView(R.layout.ingrediants_page);
+        setContentView(R.layout.ingredients_page);
     }
 }
