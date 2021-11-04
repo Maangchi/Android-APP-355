@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private
     Button ing_btn = findViewById(R.id.ing_btn);
-    Button shopping_list = findViewById(R.id.Shopping_btn);
+    Button shopping_btn = findViewById(R.id.Shopping_btn);
     Button ing_btn_press = findViewById(R.id.ing_btn);
 
     @Override
@@ -27,10 +27,12 @@ public class MainActivity extends AppCompatActivity {
                 openingredients_page();
             }
         });
+
     }
 
     public void openingredients_page() {
         Intent intent = new Intent(this, ingredientsPage.class);
         startActivity(intent);
     }
+
 }
