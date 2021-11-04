@@ -48,14 +48,39 @@ public class ingredientsPage extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                makeToast("Long press: " + items.get(i));
+                makeToast("Removed: " + items.get(i));
+                removeItem(i);
                 return false;
             }
         });
 
         adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, items);
         listView.setAdapter(adapter);
+
+        enter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String text = input.getText().toString();
+                if(text == null || text.length() == 0) {
+                    makeToast("Enter an Item.");
+                }else{
+                        addItem(text);
+                        input.setText("");
+                        makeToast("Added: " + text);
+                }
+            }
+        });
     }
+    public void removeItem(int remove){
+        items.remove(remove);
+        adapter.notifyDataSetChanged();
+    }
+
+    public void addItem(String item){
+        items.add(item);
+        adapter.notifyDataSetChanged();
+    }
+
     Toast t;
 
     private void makeToast(String s){
