@@ -27,12 +27,12 @@
         android:layout_marginTop="84dp"
         android:layout_marginEnd="139dp"
         android:layout_marginBottom="21dp"
-        android:text="ingredients"
+        android:text="Fill Up Your Pantry!"
         app:layout_constraintBottom_toTopOf="@+id/recipe_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:onClick="onIngbtnClick" />
+        />
 
     <Button
         android:id="@+id/recipe_btn"

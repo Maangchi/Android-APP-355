@@ -4,33 +4,31 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
-    private
-    Button ing_btn = findViewById(R.id.ing_btn);
-    Button shopping_list = findViewById(R.id.Shopping_btn);
-    Button ing_btn_press = findViewById(R.id.ing_btn);
+    Button ing_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ing_btn = (Button)findViewById(R.id.ing_btn);
         ing_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openingredients_page();
+                openPantry();
             }
         });
+
     }
 
-    public void openingredients_page() {
-        Intent intent = new Intent(this, ingredientsPage.class);
+    public void openPantry() {
+        Intent intent = new Intent(this, Pantry.class);
         startActivity(intent);
     }
+
 }
