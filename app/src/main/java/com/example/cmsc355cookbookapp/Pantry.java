@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class ingredientsPage extends AppCompatActivity {
+public class Pantry extends AppCompatActivity {
     ListView listView;
     ArrayList<String> items;
     ArrayAdapter<String> adapter;
@@ -25,7 +25,7 @@ public class ingredientsPage extends AppCompatActivity {
     @Override
     protected  void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ingredients_page);
+        setContentView(R.layout.pantry_layout);
 
         listView = findViewById(R.id.listview);
         input = findViewById(R.id.input);
@@ -64,9 +64,9 @@ public class ingredientsPage extends AppCompatActivity {
                 if(text == null || text.length() == 0) {
                     makeToast("Enter an Item.");
                 }else{
-                        addItem(text);
-                        input.setText("");
-                        makeToast("Added: " + text);
+                    addItem(text);
+                    input.setText("");
+                    makeToast("Added: " + text);
                 }
             }
         });
