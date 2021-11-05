@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ing_btn" />
 
     <Button
-        android:id="@+id/Shopping_btn"
+        android:id="@+id/shopping_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="117dp"
