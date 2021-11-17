@@ -62,7 +62,7 @@ public class Pantry extends AppCompatActivity {
             public void onClick(View view) {
                 String text = input.getText().toString();
                 if(text == null || text.length() == 0) {
-                    makeToast("Enter an Item.");
+                    makeToast("Enter an Item: ");
                 }else{
                     addItem(text);
                     input.setText("");
