@@ -43,7 +43,7 @@ public class ShoppingPage extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                makeToast("Just removed: " + items.get(i) + "from the list");
+                makeToast("Just removed: " + items.get(i) + "from the list!");
                 removeItem(i);
                 return false;
             }
@@ -57,11 +57,11 @@ public class ShoppingPage extends AppCompatActivity {
             public void onClick(View view) {
                 String text = input.getText().toString();
                 if(text == null || text.length() == 0) {
-                    makeToast("Enter an item you'd like to add: ");
+                    makeToast("Enter an item you'd like to add to the cart: ");
                 }else{
                     addItem(text);
                     input.setText("");
-                    makeToast("Just added: " + text + "to the cart");
+                    makeToast("Just added: " + text + "to the cart!");
                 }
             }
         });

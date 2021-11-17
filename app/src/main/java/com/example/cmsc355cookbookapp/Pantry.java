@@ -47,6 +47,9 @@ public class Pantry extends AppCompatActivity {
         items.add("Rice");
         items.add("Salt");
         items.add("Pepper");
+        items.add("Vinegar");
+        items.add("Sugar");
+        items.add("Soy sauce");
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
