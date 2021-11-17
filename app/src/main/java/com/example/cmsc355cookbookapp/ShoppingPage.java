@@ -57,11 +57,11 @@ public class ShoppingPage extends AppCompatActivity {
             public void onClick(View view) {
                 String text = input.getText().toString();
                 if(text == null || text.length() == 0) {
-                    makeToast("Enter an Item: ");
+                    makeToast("Enter an item you'd like to add: ");
                 }else{
                     addItem(text);
                     input.setText("");
-                    makeToast("Just added: " + text + "to the list");
+                    makeToast("Just added: " + text + "to the cart");
                 }
             }
         });
