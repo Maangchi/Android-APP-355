@@ -50,6 +50,13 @@ public class Pantry extends AppCompatActivity {
         items.add("Vinegar");
         items.add("Sugar");
         items.add("Soy sauce");
+        items.add("Flour");
+        items.add("Honey");
+        items.add("Vegetable oil");
+        items.add("Sriracha");
+        items.add("Mayonnaise");
+        items.add("Basil");
+        items.add("Oregano");
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
