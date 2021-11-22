@@ -1,5 +1,6 @@
 package com.example.cmsc355cookbookapp;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
@@ -14,9 +15,31 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+public final class PantryDB {
+    // To prevent someone from accidentally instantiating the contract class,
+    // make the constructor private.
+    private PantryDB() {}
 
-//savannah test commit
+    /* Inner class that defines the table contents */
+    public static class Ingredient implements BaseColumns {
+        public static final String TABLE_NAME = "ingr";
+        public static final String COLUMN_NAME = "name";
+    }
+
+
+    private static final String SQL_CREATE_ENTRIES =
+            "CREATE TABLE " + Ingredient.TABLE_NAME + " (" +
+                    Ingredient._ID + " INTEGER PRIMARY KEY," +
+                    Ingredient.COLUMN_NAME + " TEXT," +
+                    Ingredient._COUNT + " TEXT";
+
+    private static final String SQL_DELETE_ENTRIES =
+            "DROP TABLE IF EXISTS " + Ingredient.TABLE_NAME;
+}
+
 public class Pantry extends AppCompatActivity {
+    public static final String DATABASE_NAME = "MyPantry.db";
+
     ListView listView;
     ArrayList<String> items;
     ArrayAdapter<String> adapter;
@@ -24,20 +47,18 @@ public class Pantry extends AppCompatActivity {
     EditText input;
     ImageView enter;
 
-    @Override
-    protected  void onCreate(Bundle savedInstanceState){
+    //@Override
+    protected  void onCreate(Bundle savedInstanceState, SQLiteDatabase db){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantry_layout);
+        db.execSQL(SQL_CREATE_ENTRIES);
 
         listView = findViewById(R.id.listview);
         input = findViewById(R.id.input);
         enter = findViewById(R.id.add);
 
-        items = new ArrayList<>();
-        items.add("Apple");
-        items.add("Banana");
-        items.add("Green Onions");
-        items.add("Big Apples");
+        //create pantry db
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
