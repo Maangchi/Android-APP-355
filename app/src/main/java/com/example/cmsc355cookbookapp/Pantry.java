@@ -2,9 +2,9 @@ package com.example.cmsc355cookbookapp;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -15,77 +15,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class Pantry extends AppCompatActivity {
-    ListView listView;
-    ArrayList<String> items;
-    ArrayAdapter<String> adapter;
-
-    EditText input;
-    ImageView enter;
+    Button add_btn_ing;
+    EditText Item_Amount, input_name, amount_type;
+    ListView ingrediate_list;
 
     @Override
-    protected  void onCreate(Bundle savedInstanceState){
+    protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantry_layout);
 
-        listView = findViewById(R.id.listview);
-        input = findViewById(R.id.input);
-        enter = findViewById(R.id.add);
+        add_btn_ing = findViewById(R.id.add_btn_ing );
+        Item_Amount = findViewById(R.id.Item_Amount);
+        input_name = findViewById(R.id.input_name);
+        amount_type = findViewById(R.id.amount_type);
+        ingrediate_list = findViewById(R.id.ingrediate_list);
 
-        items = new ArrayList<>();
-        items.add("Apple");
-        items.add("Banana");
-        items.add("Green Onions");
-        items.add("Big Apples");
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String name = items.get(i);
-                makeToast(name);
-            }
-        });
-
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                makeToast("Removed: " + items.get(i));
-                removeItem(i);
-                return false;
-            }
-        });
-
-        adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, items);
-        listView.setAdapter(adapter);
-
-        enter.setOnClickListener(new View.OnClickListener() {
+        //Listeners
+        add_btn_ing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String text = input.getText().toString();
-                if(text == null || text.length() == 0) {
-                    makeToast("Enter an Item.");
-                }else{
-                    addItem(text);
-                    input.setText("");
-                    makeToast("Added: " + text);
-                }
+                Ingredients_class ingredientModel = new Ingredients_class(-1, input_name.getText().toString(), Integer.parseInt(Item_Amount.getText().toString()), amount_type.getText().toString(), false);
+                Toast.makeText(Pantry.this, ingredientModel.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-    public void removeItem(int remove){
-        items.remove(remove);
-        adapter.notifyDataSetChanged();
-    }
 
-    public void addItem(String item){
-        items.add(item);
-        adapter.notifyDataSetChanged();
-    }
-
-    Toast t;
-
-    private void makeToast(String s){
-        if(t != null) t.cancel();
-        t = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT);
-        t.show();
-    }
 }
