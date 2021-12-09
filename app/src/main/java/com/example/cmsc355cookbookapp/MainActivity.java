@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         shopping_btn = (Button)findViewById(R.id.shopping_btn);
+        ing_btn = (Button)findViewById(R.id.ing_btn);
 
         shopping_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,14 +27,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ing_btn = (Button)findViewById(R.id.ing_btn);
         ing_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openShoppingPage();
             }
         });
-
     }
 
     public void openPantry() {

@@ -34,8 +34,18 @@ public class Pantry extends AppCompatActivity {
         add_btn_ing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Ingredients_class ingredientModel = new Ingredients_class(-1, input_name.getText().toString(), Integer.parseInt(Item_Amount.getText().toString()), amount_type.getText().toString(), false);
-                Toast.makeText(Pantry.this, ingredientModel.toString(), Toast.LENGTH_SHORT).show();
+                Ingredients_class ingredient;
+                if((!input_name.getText().toString().equals("")) && (!amount_type.getText().toString().equals("")) && (!Item_Amount.getText().toString().equals("")) ) {
+                    ingredient = new Ingredients_class(-1, input_name.getText().toString(), Integer.parseInt(Item_Amount.getText().toString()), amount_type.getText().toString(), false);
+                }
+                else{
+                    Toast.makeText(Pantry.this, "Missing Fields", Toast.LENGTH_SHORT).show();
+                    ingredient = new Ingredients_class(-1, "error", 0, "error", false);
+
+                }
+                ingredientsDBHelper dbHelper = new ingredientsDBHelper(Pantry.this);
+                boolean success = dbHelper.addOne(ingredient);
+                Toast.makeText(Pantry.this, "Success = " + success, Toast.LENGTH_SHORT).show();
             }
         });
     }
