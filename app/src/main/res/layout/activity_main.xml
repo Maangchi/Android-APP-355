@@ -42,7 +42,7 @@
         android:layout_marginTop="21dp"
         android:layout_marginBottom="26dp"
         android:text="Recipes"
-        app:layout_constraintBottom_toTopOf="@+id/Shopping_btn"
+        app:layout_constraintBottom_toTopOf="@+id/shopping_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
