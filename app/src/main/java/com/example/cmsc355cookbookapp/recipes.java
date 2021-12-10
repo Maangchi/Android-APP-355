@@ -38,17 +38,30 @@ public class recipes extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                recipes_class recipe = new recipes_class(-1, et_recipe.getText().toString(), et_ing1.getText().toString(), et_ing2.getText().toString(), et_ing3.getText().toString(),//
-                        Integer.parseInt(et_ing1_amt.getText().toString()), Integer.parseInt(et_ing2_amt.getText().toString()), Integer.parseInt(et_ing3_amt.getText().toString()), //
-                        et_ing1_amtType.getText().toString(),et_ing2_amtType.getText().toString(),et_ing3_amtType.getText().toString());
-                Toast.makeText(recipes.this, recipe.toString(), Toast.LENGTH_SHORT).show();
+
+                recipes_class recipe_construct;
+
+                try {
+                    recipe_construct = new recipes_class(-1, et_recipe.getText().toString(), et_ing1.getText().toString(), et_ing2.getText().toString(), et_ing3.getText().toString(),//
+                            Integer.parseInt(et_ing1_amt.getText().toString()), Integer.parseInt(et_ing2_amt.getText().toString()), Integer.parseInt(et_ing3_amt.getText().toString()), //
+                            et_ing1_amtType.getText().toString(), et_ing2_amtType.getText().toString(), et_ing3_amtType.getText().toString());
+                    //Toast.makeText(recipes.this, recipe_construct.toString(), Toast.LENGTH_SHORT).show();
+                }
+                catch(Exception e){
+                    Toast.makeText(recipes.this, "Error Creating Recipe", Toast.LENGTH_SHORT).show();
+                    recipe_construct = new recipes_class(-1, "error", "trash", "trash", "trash", 0,0,0,"tsp","tsp","tsp");
+                }
+
+                recipesDBHelper rDBHelper = new recipesDBHelper(recipes.this);
+                boolean success = rDBHelper.addOne(recipe_construct);
+                Toast.makeText(recipes.this, "Success: "  + success, Toast.LENGTH_SHORT).show();
             }
         });
 
         btn_viewall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Toast.makeText(recipes.this, "View All", Toast.LENGTH_SHORT).show();
             }
         });
     }
