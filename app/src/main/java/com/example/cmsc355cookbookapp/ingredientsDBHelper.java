@@ -38,6 +38,7 @@ public class ingredientsDBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+
     public boolean addOne(Ingredients_class Ingredient){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -80,6 +81,38 @@ public class ingredientsDBHelper extends SQLiteOpenHelper {
         db.close();
         return returnList;
     }
+
+    public List<Ingredients_class> getAllEmpty() {
+        condenseDB();
+        List<Ingredients_class> returnList = new ArrayList<>();
+
+        //SQL Query to get all data from DB
+        String queryString = "SELECT * FROM "+INGREDIENT_TABLE;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString, null);
+        if(cursor.moveToFirst()) {
+            do {
+                if(cursor.getInt(2) == 0) {
+                    int id = cursor.getInt(0);
+                    String name = cursor.getString(1);
+                    int amount = cursor.getInt(2);
+                    String Amount_type = cursor.getString(3);
+                    boolean need = cursor.getInt(4) == 1;
+
+                    Ingredients_class temp = new Ingredients_class(id, name, amount, Amount_type, need);
+                    returnList.add(temp);
+                }
+            } while (cursor.moveToNext());
+        }
+        else{
+            // Nothing will be added if there is an empty DB
+        }
+
+        cursor.close();
+        db.close();
+        return returnList;
+    }
+
     public Ingredients_class searchByName(String name) {
         Ingredients_class ingredient = new Ingredients_class();
         String queryString = QUERY_SEARCH_BY_NAME +"'"+name+"';";
@@ -101,6 +134,7 @@ public class ingredientsDBHelper extends SQLiteOpenHelper {
             return new Ingredients_class();
         }
     }
+
     public void condenseDB() {
         String queryString = "SELECT * FROM " + INGREDIENT_TABLE;
         SQLiteDatabase db = this.getWritableDatabase();

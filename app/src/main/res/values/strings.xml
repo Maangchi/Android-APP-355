@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">CMSC355CookBookApp</string>
+
+    <string-array name="amount_types">
+        <item>Pounds</item>
+        <item>Ounces</item>
+        <item>Cups</item>
+        <item>tablespoon</item>
+        <item>teaspoon</item>
+        <item>Grams</item>
+        <item>Kilograms</item>
+        <item>Liter</item>
+        <item>MilliLiters</item>
+        <item>pint</item>
+    </string-array>
 </resources>
