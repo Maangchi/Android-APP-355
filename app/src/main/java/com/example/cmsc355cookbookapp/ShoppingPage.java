@@ -2,7 +2,6 @@ package com.example.cmsc355cookbookapp;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -28,7 +27,7 @@ public class ShoppingPage extends AppCompatActivity {
         setContentView(R.layout.shopping_page);
 
         listView = findViewById(R.id.listview);
-        input = findViewById(R.id.input);
+        input = findViewById(R.id.input_name);
         enter = findViewById(R.id.add);
 
 

@@ -17,12 +17,12 @@
         android:ems="10"
         android:hint="Enter Item Here"
         android:layout_centerInParent="true"
-        android:id="@+id/input"
+        android:id="@+id/input_name"
         />
     <ImageView
         android:layout_width="40sp"
         android:layout_height="40sp"
-        android:layout_toEndOf="@+id/input"
+        android:layout_toEndOf="@+id/input_name"
         android:id="@+id/add"
         android:layout_marginStart="7sp"
         android:layout_centerVertical="true"/>
