@@ -32,10 +32,6 @@ public class Pantry extends AppCompatActivity {
         enter = findViewById(R.id.add);
 
         items = new ArrayList<>();
-        items.add("Apple");
-        items.add("Banana");
-        items.add("Green Onions");
-        items.add("Big Apples");
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

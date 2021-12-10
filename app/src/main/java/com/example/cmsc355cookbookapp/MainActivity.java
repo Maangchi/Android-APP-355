@@ -17,20 +17,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         shopping_btn = (Button)findViewById(R.id.shopping_btn);
 
         shopping_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openPantry();
+                openShoppingPage();
             }
         });
-
         ing_btn = (Button)findViewById(R.id.ing_btn);
         ing_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openShoppingPage();
+                openPantry();
             }
         });
 
@@ -45,6 +46,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ShoppingPage.class);
         startActivity(intent);
     }
-
-
 }
