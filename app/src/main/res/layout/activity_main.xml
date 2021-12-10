@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    app:backgroundTint = "@null"
+    android:background="@drawable/custom_button"
     tools:context=".MainActivity">
 
     <TextView
@@ -24,12 +25,12 @@
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
+        android:background="@drawable/custom_button"
         android:text="Fill Up Your Pantry!"
         app:layout_constraintBottom_toTopOf="@+id/recipe_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:background= "@drawable/custom_button"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/recipe_btn"
@@ -37,9 +38,11 @@
         android:layout_height="60dp"
         android:layout_marginTop="21dp"
         android:text="Recipes"
+        android:textColor = "#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/shopping_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/ing_btn" />
 
     <Button
