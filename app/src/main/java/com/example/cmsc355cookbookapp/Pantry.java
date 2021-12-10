@@ -13,9 +13,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Pantry extends AppCompatActivity {
-    Button add_btn_ing;
+    Button add_btn_ing, View_btn;
     EditText Item_Amount, input_name, amount_type;
     ListView ingrediate_list;
 
@@ -29,6 +30,7 @@ public class Pantry extends AppCompatActivity {
         input_name = findViewById(R.id.input_name);
         amount_type = findViewById(R.id.amount_type);
         ingrediate_list = findViewById(R.id.ingrediate_list);
+        View_btn = findViewById(R.id.View_btn);
 
         //Listeners
         add_btn_ing.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +48,18 @@ public class Pantry extends AppCompatActivity {
                 ingredientsDBHelper dbHelper = new ingredientsDBHelper(Pantry.this);
                 boolean success = dbHelper.addOne(ingredient);
                 Toast.makeText(Pantry.this, "Success = " + success, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        View_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ingredientsDBHelper db = new ingredientsDBHelper( Pantry.this);
+                List<Ingredients_class> all = db.getAll();
+
+                ArrayAdapter adapter = new ArrayAdapter<Ingredients_class>(Pantry.this, android.R.layout.simple_list_item_1, all);
+                ingrediate_list.setAdapter(adapter);
+
             }
         });
     }

@@ -2,10 +2,14 @@ package com.example.cmsc355cookbookapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ingredientsDBHelper extends SQLiteOpenHelper {
 
@@ -33,7 +37,7 @@ public class ingredientsDBHelper extends SQLiteOpenHelper {
 
     }
     public boolean addOne(Ingredients_class Ingredient){
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_INGREDIENT_NAME, Ingredient.getName());
         cv.put(COLUMN_INGREDIENT_AMOUNT, Ingredient.getAmount());
@@ -41,7 +45,35 @@ public class ingredientsDBHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_INGREDIENT_NEED, Ingredient.isNeed());
 
         long insert = db.insert(INGREDIENT_TABLE, null, cv);
+        db.close();
         return insert != -1;
+    }
 
+    public List<Ingredients_class> getAll() {
+        List<Ingredients_class> returnList = new ArrayList<>();
+
+        //SQL Query to get all data from DB
+        String queryString = "SELECT * FROM "+INGREDIENT_TABLE;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString, null);
+        if(cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String name = cursor.getString(1);
+                int amount = cursor.getInt(2);
+                String Amount_type = cursor.getString(3);
+                boolean need = cursor.getInt(4) == 1;
+
+                Ingredients_class temp = new Ingredients_class(id, name, amount, Amount_type, need);
+                returnList.add(temp);
+            } while (cursor.moveToNext());
+        }
+        else{
+            // Nothing will be added if there is an empty DB
+        }
+
+        cursor.close();
+        db.close();
+        return returnList;
     }
 }
