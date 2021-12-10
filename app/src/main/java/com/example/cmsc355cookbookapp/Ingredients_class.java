@@ -1,6 +1,6 @@
 package com.example.cmsc355cookbookapp;
 
-class Ingredients_class {
+public class Ingredients_class {
 
     private int ing_id;
     private String name;

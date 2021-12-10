@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cmsc355cookbookapp.CustomArrayAdapter.PantryListAdapter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -70,7 +72,7 @@ public class Pantry extends AppCompatActivity implements AdapterView.OnItemSelec
                 ingredientsDBHelper db = new ingredientsDBHelper( Pantry.this);
                 List<Ingredients_class> all = db.getAll();
 
-                ArrayAdapter adapter = new ArrayAdapter<Ingredients_class>(Pantry.this, android.R.layout.simple_list_item_1, all);
+                PantryListAdapter adapter = new PantryListAdapter(Pantry.this, all);
                 ingrediate_list.setAdapter(adapter);
 
             }
