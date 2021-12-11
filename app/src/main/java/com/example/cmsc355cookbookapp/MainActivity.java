@@ -43,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
                 openPantry();
             }
         });
+
+        recipe_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRecipes();
+            }
+        });
     }
 
     public void openPantry() {
