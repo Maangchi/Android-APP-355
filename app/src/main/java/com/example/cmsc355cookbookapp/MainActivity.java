@@ -26,14 +26,7 @@ public class MainActivity extends AppCompatActivity {
         shopping_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openShoppingPage() ;
-            }
-        });
-
-        recipe_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRecipes() ;
+                openShoppingPage();
             }
         });
 
