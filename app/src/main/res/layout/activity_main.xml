@@ -34,7 +34,6 @@
         android:background="@drawable/custom_button"
         app:layout_constraintBottom_toTopOf="@+id/recipe_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -50,7 +49,6 @@
         app:layout_constraintBottom_toTopOf="@+id/shopping_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/ing_btn" />
 
     <Button
@@ -64,9 +62,7 @@
         android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.392"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipe_btn"
-        app:layout_constraintVertical_bias="0.698" />
+        app:layout_constraintTop_toBottomOf="@+id/recipe_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
