@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Pantry extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    Button add_btn_ing, View_btn;
+    Button add_btn_ing;
     EditText Item_Amount, input_name;
     ListView ingrediate_list;
     TextView text_header;
@@ -38,7 +38,6 @@ public class Pantry extends AppCompatActivity implements AdapterView.OnItemSelec
         Item_Amount = findViewById(R.id.Item_Amount);
         input_name = findViewById(R.id.input_name);
         ingrediate_list = findViewById(R.id.ingrediate_list);
-        View_btn = findViewById(R.id.View_btn);
 
 
         amount_type = findViewById(R.id.amount_type);
@@ -49,6 +48,8 @@ public class Pantry extends AppCompatActivity implements AdapterView.OnItemSelec
         amount_type.setAdapter(adapter);
         amount_type.setOnItemSelectedListener(this);
         refreshList();
+
+
         //Listeners
         add_btn_ing.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,17 +61,11 @@ public class Pantry extends AppCompatActivity implements AdapterView.OnItemSelec
                     ingredient = new Ingredients_class(-1, input_name.getText().toString(), Integer.parseInt(Item_Amount.getText().toString()), amount_type.getSelectedItem().toString(), false);
                     boolean success = dbHelper.addOne(ingredient);
                     refreshList();
+                    Toast.makeText(Pantry.this, Item_Amount.getText().toString() + " " + amount_type.getSelectedItem().toString() + " of "+input_name.getText().toString()+" Added", Toast.LENGTH_SHORT ).show();
                 }
                 else {
                     Toast.makeText(Pantry.this, "Missing Fields", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
-
-        View_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                refreshList();
             }
         });
     }
@@ -78,7 +73,6 @@ public class Pantry extends AppCompatActivity implements AdapterView.OnItemSelec
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
         String text = parent.getItemAtPosition(i).toString();
-        Toast.makeText(parent.getContext(), text,Toast.LENGTH_SHORT).show();
     }
 
     @Override
