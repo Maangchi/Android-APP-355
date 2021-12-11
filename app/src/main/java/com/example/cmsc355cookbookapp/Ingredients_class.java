@@ -1,6 +1,6 @@
 package com.example.cmsc355cookbookapp;
 
-class Ingredients_class {
+public class Ingredients_class {
 
     private int ing_id;
     private String name;
@@ -16,9 +16,11 @@ class Ingredients_class {
         Amount_type = amount_type;
         this.need = need;
     }
+
+    public Ingredients_class() {
+    }
+
     //toString
-
-
     @Override
     public String toString() {
         return "Ingrediates_class{" +

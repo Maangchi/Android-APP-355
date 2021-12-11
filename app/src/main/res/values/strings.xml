@@ -11,4 +11,17 @@
     <string name="ing2_amt">Num</string>
     <string name="ing3_amt">Num</string>
     <string name="ing_amtType">Type</string>
+
+    <string-array name="amount_types">
+        <item>Pounds</item>
+        <item>Ounces</item>
+        <item>Cups</item>
+        <item>tablespoon</item>
+        <item>teaspoon</item>
+        <item>Grams</item>
+        <item>Kilograms</item>
+        <item>Liter</item>
+        <item>MilliLiters</item>
+        <item>pint</item>
+    </string-array>
 </resources>
