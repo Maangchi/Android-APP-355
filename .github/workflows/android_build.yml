@@ -12,8 +12,6 @@ jobs:
 
       - name: Set up JDK
         uses: actions/setup-java@v1
-        with:
-          java-vesion: 1.8
 
       - name: Build Project
         run: ./gradlew assemble
