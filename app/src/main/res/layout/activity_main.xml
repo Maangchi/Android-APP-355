@@ -17,6 +17,8 @@
         android:gravity="center"
         android:text="My Cook Book!"
         android:textStyle="bold"
+        app:backgroundTint = "@null"
+        android:background="@drawable/custom_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,10 +28,10 @@
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/custom_button"
         android:text="Fill Up Your Pantry!"
         android:textColor="#FFFFFF"
-
+        app:backgroundTint = "@null"
+        android:background="@drawable/custom_button"
         app:layout_constraintBottom_toTopOf="@+id/recipe_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +44,8 @@
         android:layout_marginTop="21dp"
         android:text="Recipes"
         android:textColor = "#FFFFFF"
+        app:backgroundTint = "@null"
+        android:background="@drawable/custom_button"
         app:layout_constraintBottom_toTopOf="@+id/shopping_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,9 +59,19 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="268dp"
         android:text="My Shopping List"
+        app:backgroundTint = "@null"
+        android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipe_btn" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="558dp"
+        android:layout_height="1494dp"
+        app:srcCompat="@drawable/pancakes_background"
+        tools:layout_editor_absoluteX="-77dp"
+        tools:layout_editor_absoluteY="-124dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
