@@ -5,7 +5,13 @@
       <map>
         <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/add_item.xml" value="0.21875" />
+        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/button_fancy.xml" value="0.3" />
+        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/custom_button.xml" value="0.3" />
+        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/default_button.xml" value="0.3" />
+        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/disable_button.xml" value="0.3" />
         <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/new_custom_button.xml" value="0.3" />
+        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/pressed_button.xml" value="0.3" />
         <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/layout/activity_main.xml" value="0.2907608695652174" />
         <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/layout/ingrediants_page.xml" value="0.3038949275362319" />
         <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/layout/ingredients_page.xml" value="0.2" />

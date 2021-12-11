@@ -66,6 +66,8 @@
         android:layout_marginTop="8dp"
         android:text="Add"
         app:layout_constraintEnd_toStartOf="@+id/btn_viewall"
+        app:backgroundTint = "@null"
+        android:background="@drawable/custom_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_ing3" />
 
@@ -74,6 +76,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View All"
+        app:backgroundTint = "@null"
+        android:background="@drawable/custom_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_add"
         app:layout_constraintTop_toTopOf="@+id/btn_add" />
