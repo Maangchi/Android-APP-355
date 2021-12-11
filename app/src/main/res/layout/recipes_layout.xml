@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".recipes">
+
+    <EditText
+        android:id="@+id/et_recipe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/RecipeName"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_ing1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:hint="@string/r_ing1"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/et_ing1_amt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_recipe" />
+
+    <EditText
+        android:id="@+id/et_ing2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:hint="@string/r_ing2"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/et_ing2_amt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_ing1" />
+
+    <EditText
+        android:id="@+id/et_ing3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:hint="@string/r_ing3"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/et_ing3_amt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_ing2" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Add"
+        app:layout_constraintEnd_toStartOf="@+id/btn_viewall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_ing3" />
+
+    <Button
+        android:id="@+id/btn_viewall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View All"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_add"
+        app:layout_constraintTop_toTopOf="@+id/btn_add" />
+
+    <ListView
+        android:id="@+id/lv_recipelist"
+        android:layout_width="409dp"
+        android:layout_height="436dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add" />
+
+    <EditText
+        android:id="@+id/et_ing1_amt"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ing1_amt"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/et_ing1_amtType"
+        app:layout_constraintStart_toEndOf="@+id/et_ing1"
+        app:layout_constraintTop_toTopOf="@+id/et_ing1" />
+
+    <EditText
+        android:id="@+id/et_ing2_amtType"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ing_amtType"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_ing2_amt" />
+
+    <EditText
+        android:id="@+id/et_ing3_amtType"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ing_amtType"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_ing3_amt" />
+
+    <EditText
+        android:id="@+id/et_ing1_amtType"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ing_amtType"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_ing1_amt" />
+
+    <EditText
+        android:id="@+id/et_ing2_amt"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ing2_amt"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/et_ing2_amtType"
+        app:layout_constraintStart_toEndOf="@+id/et_ing2"
+        app:layout_constraintTop_toTopOf="@+id/et_ing2" />
+
+    <EditText
+        android:id="@+id/et_ing3_amt"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ing3_amt"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/et_ing3_amtType"
+        app:layout_constraintStart_toEndOf="@+id/et_ing3"
+        app:layout_constraintTop_toTopOf="@+id/et_ing3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
