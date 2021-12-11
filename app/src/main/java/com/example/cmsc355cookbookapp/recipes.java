@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -17,6 +18,10 @@ public class recipes extends AppCompatActivity {
     Button btn_add, btn_viewall;
     EditText et_recipe, et_ing1, et_ing2, et_ing3, et_ing1_amt, et_ing2_amt, et_ing3_amt, et_ing1_amtType, et_ing2_amtType, et_ing3_amtType;
     ListView lv_recipelist;
+    ArrayAdapter recipeArrayAdapter;
+    recipesDBHelper viewDBhelper;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,10 @@ public class recipes extends AppCompatActivity {
         et_ing2_amtType = findViewById(R.id.et_ing2_amtType);
         et_ing3_amtType = findViewById(R.id.et_ing3_amtType);
         lv_recipelist = findViewById(R.id.lv_recipelist);
+
+        viewDBhelper = new recipesDBHelper(recipes.this);
+
+        ShowRecipesOnListView(viewDBhelper);
 
         // button listeners for the add and view all buttons
         btn_add.setOnClickListener(new View.OnClickListener() {
@@ -57,22 +66,29 @@ public class recipes extends AppCompatActivity {
                             "trash", 0, "trash",//
                             "trash", 0, "trash");
                 }
-
                 recipesDBHelper rDBHelper = new recipesDBHelper(recipes.this);
+
                 boolean success = rDBHelper.addOne(recipe_construct);
+
                 Toast.makeText(recipes.this, "Success: "  + success, Toast.LENGTH_SHORT).show();
+                ShowRecipesOnListView(viewDBhelper);
             }
         });
 
         btn_viewall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 recipesDBHelper viewDBhelper = new recipesDBHelper(recipes.this);
-                List<recipes_class> myRecipes = viewDBhelper.showRecipes();
 
-                Toast.makeText(recipes.this, myRecipes.toString(), Toast.LENGTH_SHORT).show();
+                ShowRecipesOnListView(viewDBhelper);
+
+                Toast.makeText(recipes.this, "Your Recipes are Amazing", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void ShowRecipesOnListView(recipesDBHelper viewDBhelper2) {
+        recipeArrayAdapter = new ArrayAdapter<recipes_class>(recipes.this, android.R.layout.simple_list_item_1, viewDBhelper2.showRecipes());
+        lv_recipelist.setAdapter(recipeArrayAdapter);
     }
 }
