@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +21,6 @@ public class recipes extends AppCompatActivity {
     ListView lv_recipelist;
     ArrayAdapter recipeArrayAdapter;
     recipesDBHelper viewDBhelper;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,10 +85,20 @@ public class recipes extends AppCompatActivity {
                 Toast.makeText(recipes.this, "Your Recipes are Amazing", Toast.LENGTH_SHORT).show();
             }
         });
-    }
 
+        lv_recipelist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                recipes_class clickedRecipe = (recipes_class) adapterView.getItemAtPosition(i);
+                viewDBhelper.deleteOne(clickedRecipe);
+                ShowRecipesOnListView(viewDBhelper);
+                Toast.makeText(recipes.this, "Deleted" + clickedRecipe.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     private void ShowRecipesOnListView(recipesDBHelper viewDBhelper2) {
         recipeArrayAdapter = new ArrayAdapter<recipes_class>(recipes.this, android.R.layout.simple_list_item_1, viewDBhelper2.showRecipes());
         lv_recipelist.setAdapter(recipeArrayAdapter);
     }
+
 }
