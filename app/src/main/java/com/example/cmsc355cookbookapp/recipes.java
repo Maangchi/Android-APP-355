@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class recipes extends AppCompatActivity {
 
     //references to buttons
@@ -42,14 +44,18 @@ public class recipes extends AppCompatActivity {
                 recipes_class recipe_construct;
 
                 try {
-                    recipe_construct = new recipes_class(-1, et_recipe.getText().toString(), et_ing1.getText().toString(), et_ing2.getText().toString(), et_ing3.getText().toString(),//
-                            Integer.parseInt(et_ing1_amt.getText().toString()), Integer.parseInt(et_ing2_amt.getText().toString()), Integer.parseInt(et_ing3_amt.getText().toString()), //
-                            et_ing1_amtType.getText().toString(), et_ing2_amtType.getText().toString(), et_ing3_amtType.getText().toString());
+                    recipe_construct = new recipes_class(-1, et_recipe.getText().toString(), //
+                            et_ing1.getText().toString(),Integer.parseInt(et_ing1_amt.getText().toString()),et_ing1_amtType.getText().toString(),//
+                            et_ing2.getText().toString(),Integer.parseInt(et_ing2_amt.getText().toString()),et_ing2_amtType.getText().toString(),//
+                            et_ing3.getText().toString(),Integer.parseInt(et_ing3_amt.getText().toString()),et_ing3_amtType.getText().toString());
                     //Toast.makeText(recipes.this, recipe_construct.toString(), Toast.LENGTH_SHORT).show();
                 }
                 catch(Exception e){
                     Toast.makeText(recipes.this, "Error Creating Recipe", Toast.LENGTH_SHORT).show();
-                    recipe_construct = new recipes_class(-1, "error", "trash", "trash", "trash", 0,0,0,"tsp","tsp","tsp");
+                    recipe_construct = new recipes_class(-1, "error",
+                            "trash", 0, "trash",//
+                            "trash", 0, "trash",//
+                            "trash", 0, "trash");
                 }
 
                 recipesDBHelper rDBHelper = new recipesDBHelper(recipes.this);
@@ -61,7 +67,11 @@ public class recipes extends AppCompatActivity {
         btn_viewall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(recipes.this, "View All", Toast.LENGTH_SHORT).show();
+
+                recipesDBHelper viewDBhelper = new recipesDBHelper(recipes.this);
+                List<recipes_class> myRecipes = viewDBhelper.showRecipes();
+
+                Toast.makeText(recipes.this, myRecipes.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }

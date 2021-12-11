@@ -2,10 +2,14 @@ package com.example.cmsc355cookbookapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class recipesDBHelper extends SQLiteOpenHelper {
 
@@ -61,5 +65,41 @@ public class recipesDBHelper extends SQLiteOpenHelper {
         else{
             return true;
         }
+    }
+
+    public List<recipes_class> showRecipes() {
+        List<recipes_class> returnList = new ArrayList();
+
+        String queryString = "SELECT * FROM " + RECIPE_TABLE;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+            // loop through cursor results
+            do{
+                int recipeID = cursor.getInt(0);
+                String recipeName = cursor.getString(1);
+                String ing1 = cursor.getString(2);
+                int ing1amt = cursor.getInt(3);
+                String ing1type = cursor.getString(4);
+                String ing2 = cursor.getString(5);
+                int ing2amt = cursor.getInt(6);
+                String ing2type = cursor.getString(7);
+                String ing3 = cursor.getString(8);
+                int ing3amt = cursor.getInt(9);
+                String ing3type = cursor.getString(10);
+
+                recipes_class newRecipe = new recipes_class(recipeID, recipeName, ing1, ing1amt, ing1type,ing2, ing2amt, ing2type,ing3, ing3amt, ing3type);
+                returnList.add(newRecipe);
+            }while(cursor.moveToNext());
+        }
+        else{
+            // failure. do not add anything to the list.
+        }
+        cursor.close();
+        db.close();
+        return returnList;
     }
 }
