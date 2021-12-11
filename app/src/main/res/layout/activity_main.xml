@@ -66,12 +66,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipe_btn" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="558dp"
-        android:layout_height="1494dp"
-        app:srcCompat="@drawable/pancakes_background"
-        tools:layout_editor_absoluteX="-77dp"
-        tools:layout_editor_absoluteY="-124dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
