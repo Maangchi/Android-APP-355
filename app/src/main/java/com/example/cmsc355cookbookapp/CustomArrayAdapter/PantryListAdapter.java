@@ -25,12 +25,10 @@ public class PantryListAdapter extends ArrayAdapter<Ingredients_class> {
         if(convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.pantry_item_list, parent, false);
         }
-
-        TextView ing_amount_list = convertView.findViewById(R.id.ing_amount_list);
-        ing_amount_list.setText(Integer.toString(ingredients.getAmount()));
+        String amountAndType =  Integer.toString(ingredients.getAmount()) + " " +ingredients.getAmount_type();
         TextView ing_name = convertView.findViewById(R.id.ing_name);
         TextView ing_amount_type = convertView.findViewById(R.id.ing_amount_type);
-        ing_amount_type.setText(ingredients.getAmount_type());
+        ing_amount_type.setText(amountAndType);
         ing_name.setText(ingredients.getName());
         return convertView;
     }
