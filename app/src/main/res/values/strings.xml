@@ -15,13 +15,15 @@
     <string-array name="amount_types">
         <item>Pounds</item>
         <item>Ounces</item>
+        <item>Gallons</item>
+        <item>Quarts</item>
+        <item>Pints</item>
         <item>Cups</item>
-        <item>tablespoon</item>
-        <item>teaspoon</item>
+        <item>Tablespoon</item>
+        <item>Teaspoon</item>
         <item>Grams</item>
         <item>Kilograms</item>
         <item>Liter</item>
         <item>MilliLiters</item>
-        <item>pint</item>
     </string-array>
 </resources>

@@ -25,20 +25,17 @@ public class ingredientsDBHelper extends SQLiteOpenHelper {
     public ingredientsDBHelper(@Nullable Context context) {
         super(context, "ingredients.db", null, 1);
     }
-
     //This is called the first time a db is accessed There should be code in here to create a new db
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTableStatement = "CREATE TABLE "+INGREDIENT_TABLE+" ("+COLUMN_INGREDIENT_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+COLUMN_INGREDIENT_NAME+" TEXT, "+COLUMN_INGREDIENT_AMOUNT+" INT, "+COLUMN_INGREDIENT_AMOUNT_TYPE+" TEXT, "+COLUMN_INGREDIENT_NEED+" BOOL)";
         db.execSQL(createTableStatement);
     }
-
     //This is called if the db version number changes. It prevents users apps from breaking when you change the db design
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
     }
-
+    //Used to make an Ingredient DB entry
     public boolean addOne(Ingredients_class Ingredient){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -52,7 +49,7 @@ public class ingredientsDBHelper extends SQLiteOpenHelper {
         condenseDB();
         return insert != -1;
     }
-
+    //Returns a list of all the Ingredients in the db
     public List<Ingredients_class> getAll() {
         condenseDB();
         List<Ingredients_class> returnList = new ArrayList<>();
@@ -81,7 +78,7 @@ public class ingredientsDBHelper extends SQLiteOpenHelper {
         db.close();
         return returnList;
     }
-
+    //Returns a list of all the Ingredients with 0 amount
     public List<Ingredients_class> getAllEmpty() {
         condenseDB();
         List<Ingredients_class> returnList = new ArrayList<>();
@@ -112,7 +109,7 @@ public class ingredientsDBHelper extends SQLiteOpenHelper {
         db.close();
         return returnList;
     }
-
+    //Returns an ingredient by name
     public Ingredients_class searchByName(String name) {
         Ingredients_class ingredient = new Ingredients_class();
         String queryString = QUERY_SEARCH_BY_NAME +"'"+name+"';";
@@ -134,7 +131,7 @@ public class ingredientsDBHelper extends SQLiteOpenHelper {
             return new Ingredients_class();
         }
     }
-
+    //used to Condense the DB if there are multiple Entries with the same name
     public void condenseDB() {
         String queryString = "SELECT * FROM " + INGREDIENT_TABLE;
         SQLiteDatabase db = this.getWritableDatabase();
@@ -180,5 +177,29 @@ public class ingredientsDBHelper extends SQLiteOpenHelper {
             cursor2.close();
             db.close();
         }
+    }
+    //Updates the amount in DB by name
+    public void setAmountByName(String name, int amount){
+        Ingredients_class ingredient = searchByName(name);
+        ContentValues cv = new ContentValues();
+        SQLiteDatabase db = this.getWritableDatabase();
+        cv.put(COLUMN_INGREDIENT_NAME, ingredient.getName());
+        cv.put(COLUMN_INGREDIENT_AMOUNT, amount);
+        cv.put(COLUMN_INGREDIENT_AMOUNT_TYPE, ingredient.getAmount_type());
+        cv.put(COLUMN_INGREDIENT_NEED, ingredient.isNeed());
+        db.update(INGREDIENT_TABLE, cv,COLUMN_INGREDIENT_ID +"="+ingredient.getIng_id(),null);
+        db.close();
+    }
+    //Updates the Amount Type in DB by name
+    public void setAmountTypeByName(String name, String amountType){
+        Ingredients_class ingredient = searchByName(name);
+        ContentValues cv = new ContentValues();
+        SQLiteDatabase db = this.getWritableDatabase();
+        cv.put(COLUMN_INGREDIENT_NAME, ingredient.getName());
+        cv.put(COLUMN_INGREDIENT_AMOUNT, ingredient.getAmount());
+        cv.put(COLUMN_INGREDIENT_AMOUNT_TYPE, amountType);
+        cv.put(COLUMN_INGREDIENT_NEED, ingredient.isNeed());
+        db.update(INGREDIENT_TABLE, cv,COLUMN_INGREDIENT_ID +"="+ingredient.getIng_id(),null);
+        db.close();
     }
 }
