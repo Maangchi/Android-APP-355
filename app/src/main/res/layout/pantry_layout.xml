@@ -48,7 +48,7 @@
         />
 
     <ListView
-        android:id="@+id/ingredient_list"
+        android:id="@+id/ingrediate_list"
         android:layout_width="371dp"
         android:layout_height="509dp"
         android:layout_below="@+id/add_btn_ing"
