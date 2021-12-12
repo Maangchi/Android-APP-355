@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">CMSC355CookBookApp</string>
+    <string name="RecipeName">Recipe</string>
+    <string name="r_ing1">Ingredient One</string>
+    <string name="r_ing2">Ingredient two</string>
+    <string name="r_ing3">Ingredient three</string>
+    <string name="r_ing4">Ingredient four</string>
+    <string name="r_ing5">Ingredient five</string>
+    <string name="r_ing6">Ingredient six</string>
+    <string name="ing1_amt">Num</string>
+    <string name="ing2_amt">Num</string>
+    <string name="ing3_amt">Num</string>
+    <string name="ing_amtType">Type</string>
+
+    <string-array name="amount_types">
+        <item>Pounds</item>
+        <item>Ounces</item>
+        <item>Gallons</item>
+        <item>Quarts</item>
+        <item>Pints</item>
+        <item>Cups</item>
+        <item>Tablespoon</item>
+        <item>Teaspoon</item>
+        <item>Grams</item>
+        <item>Kilograms</item>
+        <item>Liter</item>
+        <item>MilliLiters</item>
+    </string-array>
 </resources>

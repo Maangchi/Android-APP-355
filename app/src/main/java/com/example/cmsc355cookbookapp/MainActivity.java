@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
     Button ing_btn;
     Button shopping_btn;
+    Button viewrecipe_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,33 +20,51 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         shopping_btn = (Button)findViewById(R.id.shopping_btn);
+        ing_btn = (Button)findViewById(R.id.ing_btn);
+        viewrecipe_btn = (Button)findViewById(R.id.recipe_btn);
 
         shopping_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openPantry();
-            }
-        });
-
-        ing_btn = (Button)findViewById(R.id.ing_btn);
-        ing_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openShoppingPage();
             }
         });
 
+        viewrecipe_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openRecipes();
+            }
+        });
+
+        ing_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPantry();
+            }
+        });
+
     }
 
     public void openPantry() {
+        Toast.makeText(MainActivity.this, "Opening Pantry!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, Pantry.class);
         startActivity(intent);
     }
 
+    public void openRecipes() {
+        Toast.makeText(MainActivity.this, "Opening Recipe Book!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, recipes.class);
+        startActivity(intent);
+    }
+
     public void openShoppingPage() {
+        Toast.makeText(MainActivity.this, "Shopping Time!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ShoppingPage.class);
         startActivity(intent);
     }
+
 
 
 }
