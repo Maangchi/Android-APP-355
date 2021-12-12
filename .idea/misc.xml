@@ -4,26 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/add_item.xml" value="0.21875" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/button_fancy.xml" value="0.3" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/custom_button.xml" value="0.3" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/default_button.xml" value="0.3" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/disable_button.xml" value="0.3" />
         <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/new_custom_button.xml" value="0.3" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/drawable/pressed_button.xml" value="0.3" />
         <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/layout/activity_main.xml" value="0.2907608695652174" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/layout/dropdown_item.xml" value="0.28229166666666666" />
         <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/layout/ingrediants_page.xml" value="0.3038949275362319" />
         <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/layout/ingredients_page.xml" value="0.2" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/layout/pantry_item_list.xml" value="0.28229166666666666" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/layout/pantry_layout.xml" value="0.2890625" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/layout/recipes_layout.xml" value="0.33" />
-        <entry key="..\:/Users/Chokomaru/Desktop/Programming/Android_App_Repo/app/src/main/res/layout/shopping_page.xml" value="0.20260416666666667" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.284375" />
+        <entry key="app/src/main/res/drawable/custom_button.xml" value="0.271875" />
+        <entry key="app/src/main/res/drawable/default_button.xml" value="0.23981481481481481" />
+        <entry key="app/src/main/res/drawable/disable_button.xml" value="0.23981481481481481" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.24166666666666667" />
+        <entry key="app/src/main/res/drawable/pressed_button.xml" value="0.23981481481481481" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_shopping_page.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/layout/ingrediants_page.xml" value="0.48233695652173914" />
         <entry key="app/src/main/res/layout/ingredients_page.xml" value="0.24635416666666668" />
-        <entry key="app/src/main/res/layout/pantry_item_list.xml" value="0.23596014492753623" />
+        <entry key="app/src/main/res/layout/pantry_item_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/pantry_layout.xml" value="0.2391304347826087" />
         <entry key="app/src/main/res/layout/recipes_layout.xml" value="0.23596014492753623" />
         <entry key="app/src/main/res/layout/shopping_page.xml" value="0.1" />

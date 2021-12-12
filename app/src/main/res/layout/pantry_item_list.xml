@@ -35,6 +35,9 @@
             android:layout_marginStart="155dp"
             android:text="-"
             android:textSize="16sp"
+            app:backgroundTint="@null"
+            android:background="@drawable/default_button"
+
             />
         <Button
             android:id="@+id/pos_btn"
@@ -43,6 +46,8 @@
             android:layout_marginStart="290dp"
             android:text="+"
             android:textSize="16sp"
+            app:backgroundTint="@null"
+            android:background="@drawable/default_button"
             />
         <EditText
             android:id="@+id/amountToAdd"
