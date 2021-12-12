@@ -29,7 +29,7 @@ public class recipes extends AppCompatActivity {
         setContentView(R.layout.recipes_layout);
 
         btn_add = findViewById(R.id.btn_add);
-        btn_view = findViewById(R.id.btn_view);
+        btn_viewRecipes = findViewById(R.id.btn_view);
 
         //initialize variables
         et_recipe = findViewById(R.id.et_recipe);
@@ -79,7 +79,7 @@ public class recipes extends AppCompatActivity {
             }
         });
 
-        //button listener for the view button
+        /*button listener for the view button
         btn_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,6 +90,7 @@ public class recipes extends AppCompatActivity {
                 Toast.makeText(recipes.this, "Your Recipes are Amazing", Toast.LENGTH_SHORT).show();
             }
         });
+         */
 
         //new button listener for view button
         btn_viewRecipes.setOnClickListener(new View.OnClickListener() {
