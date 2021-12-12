@@ -19,11 +19,11 @@
         <item>Quarts</item>
         <item>Pints</item>
         <item>Cups</item>
-        <item>Tablespoon</item>
-        <item>Teaspoon</item>
+        <item>Tablespoons</item>
+        <item>Teaspoons</item>
         <item>Grams</item>
         <item>Kilograms</item>
-        <item>Liter</item>
+        <item>Liters</item>
         <item>MilliLiters</item>
     </string-array>
 </resources>
