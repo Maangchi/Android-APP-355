@@ -2,6 +2,7 @@ package com.example.cmsc355cookbookapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,7 +17,7 @@ import java.util.List;
 public class recipes extends AppCompatActivity {
 
     //references to buttons
-    Button btn_add, btn_viewall;
+    Button btn_add, btn_view, btn_viewRecipes;
     EditText et_recipe, et_ing1, et_ing2, et_ing3, et_ing1_amt, et_ing2_amt, et_ing3_amt, et_ing1_amtType, et_ing2_amtType, et_ing3_amtType;
     ListView lv_recipelist;
     ArrayAdapter recipeArrayAdapter;
@@ -28,7 +29,9 @@ public class recipes extends AppCompatActivity {
         setContentView(R.layout.recipes_layout);
 
         btn_add = findViewById(R.id.btn_add);
-        btn_viewall = findViewById(R.id.btn_viewall);
+        btn_view = findViewById(R.id.btn_view);
+
+        //initialize variables
         et_recipe = findViewById(R.id.et_recipe);
         et_ing1 = findViewById(R.id.et_ing1);
         et_ing2 = findViewById(R.id.et_ing2);
@@ -41,11 +44,12 @@ public class recipes extends AppCompatActivity {
         et_ing3_amtType = findViewById(R.id.et_ing3_amtType);
         lv_recipelist = findViewById(R.id.lv_recipelist);
 
+        //create dbhelper and pass context
         viewDBhelper = new recipesDBHelper(recipes.this);
 
         ShowRecipesOnListView(viewDBhelper);
 
-        // button listeners for the add and view all buttons
+        // button listeners for the add button
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +79,8 @@ public class recipes extends AppCompatActivity {
             }
         });
 
-        btn_viewall.setOnClickListener(new View.OnClickListener() {
+        //button listener for the view button
+        btn_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 recipesDBHelper viewDBhelper = new recipesDBHelper(recipes.this);
@@ -83,6 +88,15 @@ public class recipes extends AppCompatActivity {
                 ShowRecipesOnListView(viewDBhelper);
 
                 Toast.makeText(recipes.this, "Your Recipes are Amazing", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //new button listener for view button
+        btn_viewRecipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(recipes.this, ViewRecipes.class);
+                startActivity(i);
             }
         });
 
