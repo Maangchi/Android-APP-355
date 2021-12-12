@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     Button ing_btn;
     Button shopping_btn;
-    Button recipe_btn;
+    Button viewrecipe_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         shopping_btn = (Button)findViewById(R.id.shopping_btn);
         ing_btn = (Button)findViewById(R.id.ing_btn);
-        recipe_btn = (Button)findViewById(R.id.recipe_btn);
+        viewrecipe_btn = (Button)findViewById(R.id.recipe_btn);
 
         shopping_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,9 +30,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        recipe_btn.setOnClickListener(new View.OnClickListener() {
+        viewrecipe_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 openRecipes();
             }
         });
@@ -44,12 +45,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        recipe_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRecipes();
-            }
-        });
     }
 
     public void openPantry() {
@@ -69,5 +64,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ShoppingPage.class);
         startActivity(intent);
     }
+
+
 
 }

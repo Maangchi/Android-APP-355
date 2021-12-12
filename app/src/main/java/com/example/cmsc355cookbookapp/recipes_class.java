@@ -14,9 +14,7 @@ public class recipes_class {
     private int r_ing3_amt;
     private String r_ing3_amtType;
 
-    // constructors
-
-
+    // constructor
     public recipes_class(int id, String recipe, String r_ing1, int r_ing1_amt, String r_ing1_amtType, String r_ing2, int r_ing2_amt, String r_ing2_amtType, String r_ing3, int r_ing3_amt, String r_ing3_amtType) {
         this.id = id;
         this.recipe = recipe;
