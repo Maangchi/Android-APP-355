@@ -16,6 +16,7 @@
         android:ems="10"
         android:hint="@string/RecipeName"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,6 +30,7 @@
         android:ems="10"
         android:hint="@string/r_ing1"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="@+id/et_ing1_amt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_recipe" />
@@ -42,6 +44,7 @@
         android:ems="10"
         android:hint="@string/r_ing2"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="@+id/et_ing2_amt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_ing1" />
@@ -55,6 +58,7 @@
         android:ems="10"
         android:hint="@string/r_ing3"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="@+id/et_ing3_amt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_ing2" />
@@ -65,17 +69,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Add"
-        app:layout_constraintEnd_toStartOf="@+id/btn_viewall"
+        app:layout_constraintEnd_toStartOf="@+id/btn_view"
         app:backgroundTint = "@null"
         android:background="@drawable/custom_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_ing3" />
 
     <Button
-        android:id="@+id/btn_viewall"
+        android:id="@+id/btn_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View All"
+        android:text="View Recipes"
         app:backgroundTint = "@null"
         android:background="@drawable/custom_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,14 +88,16 @@
 
     <ListView
         android:id="@+id/lv_recipelist"
-        android:layout_width="409dp"
-        android:layout_height="436dp"
+        android:layout_width="426dp"
+        android:layout_height="367dp"
         android:layout_marginTop="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.983"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_add" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_add"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/et_ing1_amt"
@@ -101,6 +107,7 @@
         android:ems="10"
         android:hint="@string/ing1_amt"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="@+id/et_ing1_amtType"
         app:layout_constraintStart_toEndOf="@+id/et_ing1"
         app:layout_constraintTop_toTopOf="@+id/et_ing1" />
@@ -113,6 +120,7 @@
         android:ems="10"
         android:hint="@string/ing_amtType"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_ing2_amt" />
 
@@ -124,6 +132,7 @@
         android:ems="10"
         android:hint="@string/ing_amtType"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_ing3_amt" />
 
@@ -135,6 +144,7 @@
         android:ems="10"
         android:hint="@string/ing_amtType"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_ing1_amt" />
 
@@ -146,6 +156,7 @@
         android:ems="10"
         android:hint="@string/ing2_amt"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="@+id/et_ing2_amtType"
         app:layout_constraintStart_toEndOf="@+id/et_ing2"
         app:layout_constraintTop_toTopOf="@+id/et_ing2" />
@@ -158,6 +169,7 @@
         android:ems="10"
         android:hint="@string/ing3_amt"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="@+id/et_ing3_amtType"
         app:layout_constraintStart_toEndOf="@+id/et_ing3"
         app:layout_constraintTop_toTopOf="@+id/et_ing3" />

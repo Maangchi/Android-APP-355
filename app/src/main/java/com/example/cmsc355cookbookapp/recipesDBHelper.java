@@ -81,8 +81,8 @@ public class recipesDBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public List<recipes_class> showRecipes() {
-        List<recipes_class> returnList = new ArrayList();
+    public ArrayList<recipes_class> showRecipes() {
+        ArrayList<recipes_class> recipes_classArrayList = new ArrayList();
 
         String queryString = "SELECT * FROM " + RECIPE_TABLE;
 
@@ -106,7 +106,7 @@ public class recipesDBHelper extends SQLiteOpenHelper {
                 String ing3type = cursor.getString(10);
 
                 recipes_class newRecipe = new recipes_class(recipeID, recipeName, ing1, ing1amt, ing1type,ing2, ing2amt, ing2type,ing3, ing3amt, ing3type);
-                returnList.add(newRecipe);
+                recipes_classArrayList.add(newRecipe);
             }while(cursor.moveToNext());
         }
         else{
@@ -114,6 +114,6 @@ public class recipesDBHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         db.close();
-        return returnList;
+        return recipes_classArrayList;
     }
 }
