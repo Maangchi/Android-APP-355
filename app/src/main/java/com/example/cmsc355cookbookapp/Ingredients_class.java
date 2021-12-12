@@ -16,10 +16,8 @@ public class Ingredients_class {
         Amount_type = amount_type;
         this.need = need;
     }
-
     public Ingredients_class() {
     }
-
     //toString
     @Override
     public String toString() {
@@ -31,7 +29,6 @@ public class Ingredients_class {
                 ", need=" + need +
                 '}';
     }
-
     //getters and setters
     public void setIng_id(int ing_id) {
         this.ing_id = ing_id;

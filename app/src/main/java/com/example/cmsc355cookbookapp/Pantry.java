@@ -83,8 +83,10 @@ public class Pantry extends AppCompatActivity implements AdapterView.OnItemSelec
     public void refreshList() {
         ingredientsDBHelper db = new ingredientsDBHelper( Pantry.this);
         List<Ingredients_class> all = db.getAll();
-
-        PantryListAdapter adapter = new PantryListAdapter(Pantry.this, all);
-        ingrediate_list.setAdapter(adapter);
+        if(all.size() > 0) {
+            PantryListAdapter adapter = new PantryListAdapter(Pantry.this, all);
+            ingrediate_list.setAdapter(adapter);
+        }
+        db.close();
     }
 }
