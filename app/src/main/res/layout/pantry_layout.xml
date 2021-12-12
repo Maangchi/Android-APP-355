@@ -9,12 +9,12 @@
     <EditText
         android:id="@+id/input_name"
         android:layout_width="wrap_content"
-        android:layout_height="57dp"
+        android:layout_height="59dp"
         android:layout_below="@+id/text_header"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="9dp"
         android:layout_marginEnd="18dp"
         android:ems="10"
         android:hint="Enter Item Name" />
@@ -33,29 +33,17 @@
         android:paddingLeft="19dp"
         android:paddingTop="9dp" />
 
-    <EditText
-        android:id="@+id/amount_type"
-        android:layout_width="168dp"
-        android:layout_height="58dp"
-        android:layout_below="@+id/input_name"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="22dp"
-        android:layout_toEndOf="@+id/Item_Amount"
-        android:ems="10"
-        android:hint="Amount type"
-        android:inputType="textPersonName" />
-
     <Button
         android:id="@+id/add_btn_ing"
-        android:layout_width="171dp"
+        android:layout_width="377dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/amount_type"
+        android:layout_below="@+id/Item_Amount"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="19dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="17dp"
         android:layout_marginLeft="19dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="17dp"
         android:text="Add" />
 
     <ListView
@@ -72,30 +60,34 @@
     <TextView
         android:id="@+id/text_header"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="0dp"
         android:fontFamily="sans-serif-black"
+        android:text="Your Pantry "
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#000000"
         tools:text="Your Pantry " />
 
-    <Button
-        android:id="@+id/View_btn"
-        android:layout_width="173dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/ingrediate_list"
-        android:layout_below="@+id/amount_type"
+    <Spinner
+        android:id="@+id/amount_type"
+        android:layout_width="194dp"
+        android:layout_height="65dp"
+        android:layout_above="@+id/add_btn_ing"
+        android:layout_below="@+id/input_name"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="0dp"
-        android:layout_toEndOf="@+id/add_btn_ing"
-        android:text="View All" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toEndOf="@+id/Item_Amount" />
+
+
+
 
 </RelativeLayout>
