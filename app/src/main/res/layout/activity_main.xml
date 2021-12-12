@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:backgroundTint = "@null"
-    android:background="@drawable/custom_button"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <TextView
