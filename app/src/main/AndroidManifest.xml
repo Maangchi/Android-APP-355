@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CMSC355CookBookApp">
         <activity
+            android:name=".recipes"
+            android:exported="true"/>
+        <activity
+            android:name=".ShoppingPage"
+            android:exported="true" />
+        <activity
             android:name=".Pantry"
             android:exported="true" />
         <activity
