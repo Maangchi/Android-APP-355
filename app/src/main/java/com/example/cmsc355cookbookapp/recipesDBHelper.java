@@ -69,7 +69,7 @@ public class recipesDBHelper extends SQLiteOpenHelper {
 
     public boolean deleteOne(recipes_class recipes){
         SQLiteDatabase db = getWritableDatabase();
-        String queryString = "DELETE FROM" + RECIPE_TABLE + " WHERE " + COLUMN_ID + " = " + recipes.getId();
+        String queryString = "DELETE FROM " + RECIPE_TABLE + " WHERE " + COLUMN_ID + " = " + recipes.getId();
 
         Cursor cursor = db.rawQuery(queryString, null);
 

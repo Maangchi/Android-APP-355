@@ -43,8 +43,6 @@ public class recipes extends AppCompatActivity {
 
         viewDBhelper = new recipesDBHelper(recipes.this);
 
-        ShowRecipesOnListView(viewDBhelper);
-
         // button listeners for the add and view all buttons
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +73,16 @@ public class recipes extends AppCompatActivity {
             }
         });
 
+        lv_recipelist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                recipes_class clickedRecipe = (recipes_class) parent.getItemAtPosition(i);
+                viewDBhelper.deleteOne(clickedRecipe);
+                ShowRecipesOnListView(viewDBhelper);
+                Toast.makeText(recipes.this, "Deleted" + clickedRecipe.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
         btn_viewall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,20 +93,12 @@ public class recipes extends AppCompatActivity {
                 Toast.makeText(recipes.this, "Your Recipes are Amazing", Toast.LENGTH_SHORT).show();
             }
         });
-
-        lv_recipelist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                recipes_class clickedRecipe = (recipes_class) adapterView.getItemAtPosition(i);
-                viewDBhelper.deleteOne(clickedRecipe);
-                ShowRecipesOnListView(viewDBhelper);
-                Toast.makeText(recipes.this, "Deleted" + clickedRecipe.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
     private void ShowRecipesOnListView(recipesDBHelper viewDBhelper2) {
         recipeArrayAdapter = new ArrayAdapter<recipes_class>(recipes.this, android.R.layout.simple_list_item_1, viewDBhelper2.showRecipes());
         lv_recipelist.setAdapter(recipeArrayAdapter);
     }
+
+
 
 }
